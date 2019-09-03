@@ -234,7 +234,11 @@ def stylize(network, initial, initial_noiseblend, content, styles, preserve_colo
                         combined_yuv[..., 2] = original_yuv[..., 2]
 
                         # 5
+                        
                         img_out = np.array(Image.fromarray(combined_yuv, 'YCbCr').convert('RGB'))
+                        if iterations % 100 == 0:
+                            Image.fromarray(img).save('output'+str(iterations)+'.jpg', quality=95)
+                        
                 else:
                     img_out = None
 
