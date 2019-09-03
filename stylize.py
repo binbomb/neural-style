@@ -238,6 +238,7 @@ def stylize(network, initial, initial_noiseblend, content, styles, preserve_colo
                         img_out = np.array(Image.fromarray(combined_yuv, 'YCbCr').convert('RGB'))
                         if iterations % 2 == 0:
                             print(iterations)
+                            print('dang o day')
                             Image.fromarray(img).save('output'+str(iterations)+'.jpg', quality=95)
                         
                 else:
